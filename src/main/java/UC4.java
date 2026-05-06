@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class UC3 {
+public class UC4 {
 
     static char[][] board = new char[3][3];
 
@@ -14,7 +14,9 @@ public class UC3 {
         printBoard();
 
         int slot = getUserSlot();
-        System.out.println("You selected slot: " + slot);
+
+        System.out.println("Your Column is "+getColFromSlot(slot));
+        System.out.println("Your Row is "+getRowFromSlot(slot));
     }
 
     public static void initializeBoard() {
@@ -63,5 +65,29 @@ public class UC3 {
         int slot = sc.nextInt();
 
         return slot;
+    }
+    public static int getColFromSlot(int slot) {
+
+        if(slot==1 || slot==4 || slot==7){
+            return 0;
+        }
+        else if(slot==2 || slot==5 || slot==8){
+            return 1;
+        }
+        else{
+            return 2;
+        }
+    }
+    public static int getRowFromSlot(int slot) {
+
+        if(slot==1 || slot==2 || slot==3){
+            return 0;
+        }
+        else if(slot==4 || slot==5 || slot==6){
+            return 1;
+        }
+        else{
+            return 2;
+        }
     }
 }
